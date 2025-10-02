@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 bool isPalindrome(std::string);
 
@@ -8,6 +9,7 @@ int main(){
     bool is_palindrome_flag;
     std::cout<<"Write your word (1): ";
     std::cin>>word;
+    std::transform(word.begin(), word.end(), word.begin(), tolower);
     is_palindrome_flag = isPalindrome(word);
 
     if(is_palindrome_flag) std::cout<<word<<" is a palindrome."<<std::endl;
